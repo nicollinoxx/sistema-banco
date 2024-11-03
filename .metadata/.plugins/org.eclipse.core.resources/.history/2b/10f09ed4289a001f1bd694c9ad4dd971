@@ -1,0 +1,24 @@
+package banco;
+
+public class ContaEspecial extends Conta {
+    private Double taxaJuros;
+
+    //Construtor
+    public ContaEspecial(Integer numero, Double saldo, Double limite, Double taxaJuros) {
+        super(numero, saldo, limite);
+        this.taxaJuros = taxaJuros;
+    }
+
+    public void aplicarJurosNoCredito() {
+        Operacao.aplicarJuros(this, taxaJuros);
+    }
+    
+    // Getters e Setters
+    public double getTaxaJuros() {
+        return taxaJuros; 
+    }
+
+    public void setTaxaJuros(Double taxa) {
+        this.taxaJuros = taxa;
+    }
+}
